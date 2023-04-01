@@ -1,0 +1,62 @@
+
+.gradiente-lateral {
+    background-image: linear-gradient(to right, #000000, #15A5E8); /* Agrega un efecto de gradiente lateral */
+  }
+h3{
+  color: #ffffff;
+  margin-right: 30%;
+  margin-left: 5%;
+    
+}
+
+.img{
+  display: flex;
+  width: 250px;
+  height: 150px;
+  margin-top: -70px;
+}
+#sapaa{
+  left: 300px;
+  width: 100px;
+  position: relative;
+}
+body{
+  background: #9ccde4;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+main >.container{
+    padding: 30px 0;
+    display: block;
+    margin-bottom: 20px;
+}
+

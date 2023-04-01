@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap');
+body{
+  font-family: 'Alkatra', cursive;
+}
+.gradiente-lateral {
+    background-image: linear-gradient(to right, #000000, #15A5E8); /* Agrega un efecto de gradiente lateral */
+  }
+h3{
+  color: #ffffff;
+  margin-right: 30%;
+  margin-left: 5%;
+    
+}
+
+.img{
+  display: flex;
+
+  margin-top: -70px;
+}
+#sapaa{
+  left: 300px;
+  width: 100px;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #333;
+}
+.tittle{
+  max-width: 1500px;
+  background-image: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)), 
+    url(../img/home.png);
+  background-position: center bottom;
+
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+
+}
+.tittle h2 {
+  margin-left: 160px;
+  font-size: 75px;
+  line-height: 80px;
+  color: #F9FAFC;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+.tittle p{
+  font-size: 16px;
+  color: #C5C5C5;
+  padding: 0 250px;
+  margin-bottom: 25px;
+}
+.ubi{
+  margin-right: 10%;
+  margin-left: 20%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin: 10px 0;
+}
+
+input, textarea {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin: 10px 0;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+textarea {
+  height: 100px;
+}
+.tittle .boton_r{
+  width: 1200px;
+}
+
