@@ -82,14 +82,47 @@ if(!isset($_SESSION['usuario'])){
 				<td><?php echo $filtro['hora']?></td>
 				<td><?php echo $filtro['inv']?></td>
 				<td><?php echo $filtro['comments']?></td>
-                <form action="" method="post">
 		        <td><button type="button" class="btn btn-danger deletebtn" data-bs-toggle="modal" data-bs-target="#eliminar"><i class="fa-solid fa-trash-can"></i>Eliminar reserva</button></td>
-                </form>
+
 				</tr>
 				<?php
 			}
 				?>
   </tbody>
-</table>	
+</table>
+	<!---- Eliminar --->
+	<div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="eliminar">Eliminar Reserva</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		  <h4>Estas seguro de eliminar la reserva?</h4>
+       <form action="../controllers/eliminar.php" method="POST">
+		   <input type="hidden" name="id" id="delete_id">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+      </div>
+		  </form>
+    </div>
+  </div>
+</div>	
+<script>
+$('.deletebtn').on('click',function(){
+	
+	$tr=$(this).closest('tr');
+	var datos=$tr.children("td").map(function(){
+	 return $(this).text();
+	});
+	
+	$('#delete_id').val(datos['0']);
+	
+});
+
+</script>
 </body>
 </html>
