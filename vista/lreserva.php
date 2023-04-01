@@ -82,8 +82,10 @@ if(!isset($_SESSION['usuario'])){
 				<td><?php echo $filtro['hora']?></td>
 				<td><?php echo $filtro['inv']?></td>
 				<td><?php echo $filtro['comments']?></td>
-		        <td><button type="button" class="btn btn-danger deletebtn" data-bs-toggle="modal" data-bs-target="#eliminar"><i class="fa-solid fa-trash-can"></i>Eliminar reserva</button></td>
-
+ 
+		        <td><button type="submit" class="btn btn-danger deletebtn" data-bs-toggle="modal" data-bs-target="#eliminar"><i class="fa-solid fa-trash-can"></i>Eliminar reserva</button></td>
+  
+            
 				</tr>
 				<?php
 			}
@@ -105,7 +107,7 @@ if(!isset($_SESSION['usuario'])){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <button type="submit" class="btn btn-danger"><input type="hidden" id="id" name="id" value="<?= $filtro['id']; ?>">Eliminar</button>
       </div>
 		  </form>
     </div>

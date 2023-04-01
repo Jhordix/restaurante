@@ -1,6 +1,6 @@
 <?php
 include_once("../php/conexion_be.php");
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $eliminar = "DELETE FROM reservas WHERE id='$id'";
 $resultado = mysqli_query($conexion, $eliminar);
