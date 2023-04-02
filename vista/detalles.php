@@ -1,5 +1,5 @@
 <?php
-require '../config/config.php';
+include_once '../config/config.php';
 include_once '../config/db.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
@@ -22,7 +22,7 @@ if ($id == '' || $token == '') {
         $resultado->execute([$id]);
         if ($resultado->fetchColumn() > 0) {
 
-            $consulta = "SELECT nombre, descripcion, precio, descuento FROM productos WHERE id=? AND activo=1";
+            $consulta = "SELECT nombre, descripcion, precio, descuento FROM productos WHERE id=? AND activo=1 LIMIT 1";
             $resultado = $conexion->prepare($consulta);
             $resultado->execute([$id]);
             $row = $resultado->fetch(PDO::FETCH_ASSOC);
@@ -50,35 +50,19 @@ if ($id == '' || $token == '') {
                 }
                 $dir->close();
             }
+        } else {
+            echo 'Error al procesar la petición';
+            exit;
         }
-        $Productos = $resultado->fetchAll(PDO::FETCH_ASSOC);
     } else {
         echo 'Error al procesar la petición';
         exit;
     }
 }
 
-$consulta = "SELECT * FROM productos";
-$resultado = $conexion->prepare($consulta);
-$resultado->execute();
-$Productos = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<?php
-session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    echo '
-    <script>
-      alert("Por favor debes iniciar sesion");
-      window.location = "../login.php";
-    </script>
-  ';
-
-    session_destroy();
-    die();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,6 +98,9 @@ if (!isset($_SESSION['usuario'])) {
     <ul>
         <li><a href="../home.php">Home</a></li>
         <li><a href="../php/cerrar_sesion.php">Cerrar</a></li>
+        <li><a href="../chekout.php">
+                Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_cart;?></span>
+            </a></li>
     </ul>
     <br>
 
@@ -143,7 +130,7 @@ if (!isset($_SESSION['usuario'])) {
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>>
+                    </div>
                 </div>
                 <div class="col-md-6 order-md-2">
                     <h2><?php echo $nombre; ?></h2>
@@ -165,8 +152,8 @@ if (!isset($_SESSION['usuario'])) {
                     </p>
 
                     <div class="d-grid gap-3 col-10 mx-auto">
-                        <button class="btn btn-outline-success" type="button">Comprar Ahora</button>
-                        <button class="btn btn-outline-dark" type="button">Agregar al Carrito</button>
+                        <button class="btn btn-outline-dark" type="button" onclick="addProducto(<?php echo $id; ?>,
+                        '<?php echo $token_tmp; ?>')">Agregar al Carrito</button>
 
 
                     </div>
@@ -179,6 +166,28 @@ if (!isset($_SESSION['usuario'])) {
 
 
     <script src="js/script.js"></script>
+
+    <script>
+        function addProducto(id, token) {
+            let url = '../php/carrito.php'
+            let formData = new FormData()
+            formData.append('id', id)
+            formData.append('token', token)
+
+            fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cors'
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        let elemento = document.getElementById("num_cart")
+                        elemento.innerHTML = data.numero
+
+                    }
+                })
+        }
+    </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
-$query = "INSERT INTO usuarios(nombre_completo,correo,usuario,contrasena) VALUES('$nombre_completo','$correo','$usuario','$contrasena')";
+$query = "INSERT INTO usuarios(nombre,correo,usuario,contrasena) VALUES('$nombre_completo','$correo','$usuario','$contrasena')";
 
 //verificacion
 $verificar_correo = mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo='$correo'"); 
