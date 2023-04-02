@@ -58,7 +58,141 @@ if(!isset($_SESSION['usuario'])){
   <li><a href="../home.php">Home</a></li>
   <li><a href="../php/cerrar_sesion.php">Cerrar</a></li>
 </ul>
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
 
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <?php foreach($resultado as $row) { ?>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat1.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle"><?php echo $row['nombre']; ?></h6>
+              <p class="card-text">$<?php echo $row['precio']; ?></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php } ?>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat2.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat3.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat4.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat5.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat6.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat7.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat8.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img src="../img/cat1.jpg" alt="">
+            <div class="card-body">
+              <h6 class="card-tittle">Primer plato</h6>
+              <p class="card-text">50.000</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="" class="btn btn-success">Añadir</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
 <script src="../js/anm.js"></script>
 </body>
