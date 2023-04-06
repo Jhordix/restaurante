@@ -18,7 +18,7 @@ function Header()
     $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 0);
     $this->Cell(80, 10, 'Descripcion', 1, 0, 'C', 0);
     $this->Cell(40, 10, 'Precio', 1, 0, 'C', 0);
-    $this->Cell(30, 10, 'Decuento', 1, 1, 'C', 0);
+    $this->Cell(30, 10, 'Descuento', 1, 1, 'C', 0);
 }
 }
 require '../php/conexion_be.php';
