@@ -19,6 +19,7 @@ if ($productos != null) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +111,7 @@ if ($productos != null) {
             <?php if ($lista_carrito != null) { ?>
                 <div class="row">
                     <div class="col-md-5 offset-md-7 d-grid gap-2">
-                        <a href="#" class="btn btn-primary btn-lg">Realizar pago</a>
+                        <a href="fpdf/pdf.php" class="btn btn-primary btn-lg">Generar factura</a>
                     </div>
                 </div>
             <?php } ?>

@@ -1,6 +1,6 @@
 <?php
 
-include_once '../restaurante/config/db.php';
+include_once 'config/db.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
