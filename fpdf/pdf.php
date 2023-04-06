@@ -17,8 +17,8 @@ function Header()
     $this->Ln(20);
     $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 0);
     $this->Cell(80, 10, 'Descripcion', 1, 0, 'C', 0);
-    $this->Cell(40, 10, 'Precio', 1, 0, 'C', 0);
-    $this->Cell(30, 10, 'Descuento', 1, 1, 'C', 0);
+    $this->Cell(30, 10, 'Precio', 1, 0, 'C', 0);
+    $this->Cell(40, 10, 'Descuento', 1, 1, 'C', 0);
 }
 }
 require '../php/conexion_be.php';
@@ -31,8 +31,8 @@ $pdf->SetFont('Arial','',16);
 while($row = $resultado->fetch_assoc()){
     $pdf->Cell(40, 10, $row['nombre'], 1, 0, 'C', 0);
     $pdf->Cell(80, 10, $row['descripcion'], 1, 0, 'C', 0);
-    $pdf->Cell(40, 10, $row['precio'], 1, 0, 'C', 0);
-    $pdf->Cell(30, 10, $row['descuento'], 1, 0, 'C', 0);
+    $pdf->Cell(30, 10, $row['precio'], 1, 0, 'C', 0);
+    $pdf->Cell(40, 10, $row['descuento'], 1, 0, 'C', 0);
     
 }
 $pdf->Output();
